@@ -175,3 +175,73 @@ do {
   i++;
 } while (i <= 10);
 
+##############################################
+Basic JavaScript: Replace Loops using Recursion
+Write a recursive function, sum(arr, n), that returns the sum of the first n elements of an array arr.
+sum([1], 0) should equal 0.
+sum([2, 3, 4], 1) should equal 2.
+sum([2, 3, 4, 5], 3) should equal 9.
+Your code should not rely on any kind of loops (for or while or higher order functions such as forEach, map, filter, or reduce.).
+You should use recursion to solve this problem.
+
+function sum(arr, n) {
+  if(n <= 0) {
+    return 0;
+  } else {
+    return sum(arr, n - 1) + arr[n - 1];
+  }
+}
+
+
+##############################################
+Basic JavaScript: Profile Lookup
+
+lookUpProfile("Kristian", "lastName") should return "Vos"
+lookUpProfile("Sherlock", "likes") should return ["Intriguing Cases", "Violin"]
+lookUpProfile("Harry", "likes") should return an array
+lookUpProfile("Bob", "number") should return "No such contact"
+lookUpProfile("Bob", "potato") should return "No such contact"
+lookUpProfile("Akira", "address") should return "No such property"
+
+// Setup
+var contacts = [
+    {
+        "firstName": "Akira",
+        "lastName": "Laine",
+        "number": "0543236543",
+        "likes": ["Pizza", "Coding", "Brownie Points"]
+    },
+    {
+        "firstName": "Harry",
+        "lastName": "Potter",
+        "number": "0994372684",
+        "likes": ["Hogwarts", "Magic", "Hagrid"]
+    },
+    {
+        "firstName": "Sherlock",
+        "lastName": "Holmes",
+        "number": "0487345643",
+        "likes": ["Intriguing Cases", "Violin"]
+    },
+    {
+        "firstName": "Kristian",
+        "lastName": "Vos",
+        "number": "unknown",
+        "likes": ["JavaScript", "Gaming", "Foxes"]
+    }
+];
+
+
+function lookUpProfile(name, prop){
+  
+// SOLUTION ###############
+for (var i = 0; i < contacts.length; i++) {
+    if (contacts[i].firstName === name) {
+        return contacts[i][prop] || "No such property";
+    }
+}
+return "No such contact";
+// Only change code above this line
+}
+lookUpProfile("Akira", "likes");
+
