@@ -234,7 +234,7 @@ var contacts = [
 
 function lookUpProfile(name, prop){
   
-// SOLUTION ###############
+// SOLUTION ######### 
 for (var i = 0; i < contacts.length; i++) {
     if (contacts[i].firstName === name) {
         return contacts[i][prop] || "No such property";
@@ -244,4 +244,37 @@ return "No such contact";
 // Only change code above this line
 }
 lookUpProfile("Akira", "likes");
+
+// Cham's SOLUTION ######
+  for(let i = 0; i < contacts.length; i++) {
+    if(contacts[i]["firstName"] === name && 
+        contacts[i].hasOwnProperty(prop)) return contacts[i][prop];
+  }
+  for(let i = 0; i < contacts.length; i++) {
+    if(contacts[i]["firstName"] !== name) return "No such contact";
+    if(!contacts[i].hasOwnProperty(prop)) return "No such property"
+  }
+
+
+
+##############################################
+
+Basic JavaScript: Generate Random Fractions with JavaScript
+
+Change randomFraction to return a random number instead of returning 0.
+
+randomFraction should return a random number.
+The number returned by randomFraction should be a decimal.
+You should be using Math.random to generate the random decimal number.
+
+function randomFraction() {
+
+  // Only change code below this line
+  // SOLUTION ######### 
+  return Math.random();
+
+  // Only change code above this line
+}
+
+##############################################
 
