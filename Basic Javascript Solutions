@@ -347,4 +347,23 @@ function convertToInteger(str) {
  return parseInt(str, 2);
 }
 
-convertToInteger("10011");
+convertToInteger("10011"); 
+
+
+##############################################
+
+Basic JavaScript: Use the Conditional (Ternary) Operator
+
+checkEqual should use the conditional operator
+checkEqual(1, 2) should return "Not Equal"
+checkEqual(1, 1) should return "Equal"
+checkEqual(1, -1) should return "Not Equal"
+
+
+// SOLUTION #########
+
+function checkEqual(a, b) {
+    return a === b ? "Equal" : "Not Equal";
+}
+
+checkEqual(1, 2);
